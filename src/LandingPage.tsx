@@ -186,7 +186,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-7xl md:text-[120px] font-headline italic leading-[0.85] text-on-surface"
+              className="text-6xl md:text-[90px] font-headline italic leading-[0.85] text-on-surface"
             >
               La Arquitectura <br />
               <span className="text-primary not-italic relative">
@@ -262,7 +262,7 @@ const Hero = () => {
               initial={{ scale: 1.2, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 2 }}
-              src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1000&auto=format&fit=crop"
+              src="/section1.webp"
               alt="Editorial Beauty"
               className="w-full h-full object-cover grayscale-[0.1]"
               referrerPolicy="no-referrer"
@@ -582,11 +582,19 @@ const TargetAudience = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-[3/4] overflow-hidden rounded-2xl shadow-[var(--shadow-deep)]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-[var(--shadow-deep)] group/img">
+              {/* Imagem Colorida (Hover) */}
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop"
-                alt="Professional Workshop"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 img-zoom"
+                src="/diseno-hover.webp"
+                alt="Diseño para Elite"
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover/img:opacity-100 transition-opacity duration-1000 img-zoom"
+                referrerPolicy="no-referrer"
+              />
+              {/* Imagem Preto e Branca (Padrão) */}
+              <img
+                src="/diseno.webp"
+                alt="Diseño para Elite"
+                className="w-full h-full object-cover opacity-100 group-hover/img:opacity-0 transition-opacity duration-1000 img-zoom"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -825,7 +833,7 @@ const Transformation = () => {
         <div className="flex flex-col lg:flex-row h-[500px] md:h-[700px] rounded-2xl overflow-hidden shadow-[var(--shadow-dramatic)]">
           <div className="flex-1 relative group overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop"
+              src="/before.webp"
               alt="Before"
               className="absolute inset-0 w-full h-full object-cover grayscale opacity-60 transition-transform duration-1000 group-hover:scale-105"
               referrerPolicy="no-referrer"
@@ -843,7 +851,7 @@ const Transformation = () => {
           <div className="w-px bg-white/20 hidden lg:block"></div>
           <div className="flex-1 relative group overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1000&auto=format&fit=crop"
+              src="/after.webp"
               alt="After"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               referrerPolicy="no-referrer"
