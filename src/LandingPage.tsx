@@ -1,13 +1,13 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { 
-  ChevronRight, 
-  School, 
-  DraftingCompass, 
-  Beaker, 
-  Banknote, 
-  Award, 
-  Group, 
-  Sparkles, 
+import {
+  ChevronRight,
+  School,
+  DraftingCompass,
+  Beaker,
+  Banknote,
+  Award,
+  Group,
+  Sparkles,
   BookOpen,
   CheckCircle,
   Menu,
@@ -63,11 +63,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled
             ? "bg-stone-50/90 backdrop-blur-xl py-3 shadow-[var(--shadow-elevated)]"
             : "bg-transparent py-6"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <div className="font-headline text-xl md:text-2xl uppercase tracking-[0.2em] text-on-surface">
@@ -465,16 +464,14 @@ const Pillars = () => {
             <motion.div
               key={pillar.id}
               variants={fadeInScale}
-              className={`group relative p-12 transition-all duration-500 rounded-2xl hover-lift ${
-                pillar.dark
+              className={`group relative p-12 transition-all duration-500 rounded-2xl hover-lift ${pillar.dark
                   ? "bg-on-surface text-white shadow-[var(--shadow-dark-card)] hover:shadow-[var(--shadow-dark-elevated)]"
                   : "bg-white border border-outline-variant/15 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-deep)]"
-              }`}
+                }`}
             >
               <div
-                className={`absolute -right-4 -top-4 text-8xl font-headline italic opacity-[0.04] ${
-                  pillar.dark ? "text-white" : "text-on-surface"
-                }`}
+                className={`absolute -right-4 -top-4 text-8xl font-headline italic opacity-[0.04] ${pillar.dark ? "text-white" : "text-on-surface"
+                  }`}
               >
                 {pillar.id}
               </div>
@@ -485,18 +482,16 @@ const Pillars = () => {
                 {pillar.title}
               </h4>
               <p
-                className={`font-light leading-relaxed ${
-                  pillar.dark ? "text-stone-400" : "text-secondary"
-                }`}
+                className={`font-light leading-relaxed ${pillar.dark ? "text-stone-400" : "text-secondary"
+                  }`}
               >
                 {pillar.desc}
               </p>
               <div
-                className={`mt-8 h-px w-full transition-all duration-500 ${
-                  pillar.dark
+                className={`mt-8 h-px w-full transition-all duration-500 ${pillar.dark
                     ? "bg-primary/30"
                     : "bg-outline-variant/20 group-hover:bg-primary/40 group-hover:w-3/4"
-                }`}
+                  }`}
               ></div>
             </motion.div>
           ))}
@@ -709,6 +704,84 @@ const Modules = () => {
               </ul>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Infográfico Responsivo */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.5}
+          className="mt-20 relative rounded-2xl overflow-hidden shadow-[var(--shadow-deep)] border border-outline-variant/10 group"
+        >
+          <img
+            src="/Infografico .webp"
+            alt="Infográfico Metodología Visage Pro"
+            className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-on-surface/10 to-transparent pointer-events-none"></div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const CoursePreview = () => {
+  return (
+    <section className="py-32 md:py-48 bg-surface-container-lowest relative overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-10 technical-grid"></div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-20 space-y-6"
+        >
+          <motion.span
+            variants={fadeUp}
+            custom={0}
+            className="text-primary uppercase tracking-[0.4em] text-[10px] font-bold block"
+          >
+            Primeros Pasos
+          </motion.span>
+          <motion.h3
+            variants={fadeUp}
+            custom={0.1}
+            className="text-5xl md:text-7xl font-headline italic text-on-surface"
+          >
+            Experiencia del Curso
+          </motion.h3>
+          <motion.p
+            variants={fadeUp}
+            custom={0.2}
+            className="text-secondary max-w-2xl mx-auto text-lg italic font-light"
+          >
+            "Disfruta de esta degustación exclusiva y entiende por qué el Método Visage Pro <br className="hidden md:block" />
+            está redefiniendo el estándar de la estética facial."
+          </motion.p>
+        </motion.div>
+
+        {/* Video Container Responsivo */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          custom={0.3}
+          className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-[var(--shadow-deep)] border border-outline-variant/10 bg-on-surface"
+        >
+          <iframe
+            style={{ overflowX: "hidden" }}
+            src="https://my.coursebox.ai/courses/224879/about"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allowFullScreen
+            title="Introducción al Curso Visage Pro"
+          ></iframe>
         </motion.div>
       </div>
     </section>
@@ -1237,7 +1310,7 @@ const Offer = () => {
           <div className="p-12 md:p-24 bg-white flex flex-col justify-center text-center">
             <div className="mb-12">
               <span className="text-secondary line-through text-xl block mb-2">
-                1.997€
+                1.9,97$
               </span>
               <div className="flex items-baseline justify-center gap-2">
                 <motion.span
@@ -1252,14 +1325,14 @@ const Offer = () => {
                   }}
                   className="text-7xl md:text-9xl font-headline text-on-surface"
                 >
-                  997€
+                  9,97$
                 </motion.span>
                 <span className="text-[11px] font-bold text-primary uppercase tracking-widest">
                   Pago Único
                 </span>
               </div>
               <p className="text-secondary text-sm mt-6 font-light italic">
-                O 12 cuotas de 97€ al mes
+                O 12 cuotas de $1 al mes
               </p>
             </div>
             <button className="w-full py-8 bg-primary text-white text-[12px] font-bold uppercase tracking-[0.4em] rounded-xl hover:bg-on-surface transition-all duration-500 shadow-[var(--shadow-deep)] hover:shadow-[var(--shadow-dramatic)]">
@@ -1375,6 +1448,7 @@ export default function LandingPage() {
       <TargetAudience />
       <Pillars />
       <Modules />
+      <CoursePreview />
       <Mentor />
       <Transformation />
       <Experiences />
